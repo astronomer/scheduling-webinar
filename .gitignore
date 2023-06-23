@@ -4,4 +4,4 @@
 airflow_settings.yaml
 __pycache__/
 astro
-**__pycache__
+*__pycache__
