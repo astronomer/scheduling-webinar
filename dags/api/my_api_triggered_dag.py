@@ -1,5 +1,5 @@
 """
-## Empty DAG to be triggered via the Airflow REST API.
+## DAG to be triggered via the Airflow REST API with Conf
 
 You can trigger DAGs via the API (https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html)
 with the `/api/v1/dags/{dag_id}/dagRuns` endpoint. 
@@ -10,7 +10,7 @@ curl -X POST 'http://localhost:8080/api/v1/dags/my_api_triggered_dag/dagRuns' \
 -H 'Content-Type: application/json' \
 --user "admin:admin" \
 -d '{
-    "conf": {"my_name":"Jani"}
+    "conf": {"my_favorite_color":"cyan"}
 }'
 
 """
@@ -24,15 +24,15 @@ from pendulum import datetime
     start_date=datetime(2023, 6, 1),
     schedule=None,
     catchup=False,
-    params={"my_name": Param("Unknown", type="string")},
+    params={"my_favorite_color": Param("unknown", type="string")},
     tags=["API"],
 )
 def my_api_triggered_dag():
     @task
-    def say_hi(**context):
-        return f"hi {context['params']['my_name']}"
+    def print_fav_color(**context):
+        return f"My favorite color is {context['params']['my_favorite_color']}."
 
-    say_hi()
+    print_fav_color()
 
 
 my_api_triggered_dag()
