@@ -15,7 +15,7 @@ import os
     start_date=datetime(2023, 6, 1),
     schedule="@daily",
     catchup=False,
-    tags=["Dataset"],
+    tags=["Dataset", "webinar"],
 )
 def dataset_schedule_upstream():
     @task

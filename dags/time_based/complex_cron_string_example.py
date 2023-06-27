@@ -18,7 +18,7 @@ from pendulum import datetime
     catchup=False,
     tags=["CRON"],
 )
-def cron_string_example():
+def complex_cron_string_example():
     @task
     def say_hi():
         return "hi"
@@ -26,4 +26,4 @@ def cron_string_example():
     say_hi()
 
 
-cron_string_example()
+complex_cron_string_example()

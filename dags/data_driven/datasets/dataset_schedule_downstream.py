@@ -14,7 +14,7 @@ import pandas as pd
     start_date=datetime(2023, 6, 1),
     schedule=[Dataset("file://include/my_data.csv")],
     catchup=False,
-    tags=["Dataset"],
+    tags=["Dataset", "webinar"],
 )
 def dataset_schedule_downstream():
     @task

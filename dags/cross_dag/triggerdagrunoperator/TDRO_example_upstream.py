@@ -17,6 +17,7 @@ from airflow.operators.trigger_dagrun import TriggerDagRunOperator
     tags=["TriggerDagRunOperator"],
 )
 def TDRO_example_upstream():
+    
     tdro = TriggerDagRunOperator(
         task_id="tdro",
         trigger_dag_id="TDRO_example_downstream",

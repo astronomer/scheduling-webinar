@@ -19,9 +19,9 @@ from pendulum import datetime
     schedule=EventsTimetable(
         event_dates=[
             datetime(2023, 8, 1),
-            datetime(2022, 12, 24, 12),
-            datetime(2022, 12, 25),
-            datetime(2022, 12, 26),
+            datetime(2023, 12, 24, 12),
+            datetime(2023, 12, 25),
+            datetime(2023, 12, 26),
         ],
         description="Upcoming Swiss holidays",
         restrict_to_events=False,

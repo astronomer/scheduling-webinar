@@ -31,8 +31,8 @@ def external_task_sensor_example_downstream():
 
     waiting_task_branch_two_async = ExternalTaskSensorAsync(
         task_id="waiting_task_branch_two_async",
-        poke_interval=10,  # Time in seconds that the job should wait in between each try
-        timeout=60 * 30,  # Time, in seconds before the task times out and fails.
+        poke_interval=10, 
+        timeout=60 * 30, 
         external_dag_id="external_task_sensor_example_upstream",
         external_task_id="start_branch_two",
     )
